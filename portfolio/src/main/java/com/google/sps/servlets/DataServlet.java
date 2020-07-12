@@ -31,3 +31,16 @@ public class DataServlet extends HttpServlet {
     response.getWriter().println("<h1>Hello JiyangGong!</h1>");
   }
 }
+public class PageViewServlet extends HttpServlet {
+
+  private int pageViews = 0;
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    pageViews++;
+
+    response.setContentType("text/html;");
+    response.getWriter().println("<h1>Page Views</h1>");
+    response.getWriter().println("<p>This page has been viewed " + pageViews + " times.</p>");
+  }
+}
